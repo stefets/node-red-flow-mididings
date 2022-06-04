@@ -1,0 +1,855 @@
+[
+    {
+        "id": "1312daf792117c43",
+        "type": "tab",
+        "label": "OSC",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "2c1bfe41f3bf4501",
+        "type": "udp in",
+        "z": "1312daf792117c43",
+        "name": "",
+        "iface": "",
+        "port": "56419",
+        "ipv": "udp4",
+        "multicast": "false",
+        "group": "",
+        "datatype": "buffer",
+        "x": 100,
+        "y": 200,
+        "wires": [
+            [
+                "62e115079a64058c"
+            ]
+        ]
+    },
+    {
+        "id": "62e115079a64058c",
+        "type": "osc",
+        "z": "1312daf792117c43",
+        "name": "",
+        "path": "",
+        "metadata": false,
+        "x": 250,
+        "y": 200,
+        "wires": [
+            [
+                "623462e011237301",
+                "40a7f8b5845bd66e"
+            ]
+        ]
+    },
+    {
+        "id": "2d165e2675c65c29",
+        "type": "comment",
+        "z": "1312daf792117c43",
+        "name": "Receiving messages on UDP port 3334",
+        "info": "",
+        "x": 170,
+        "y": 40,
+        "wires": []
+    },
+    {
+        "id": "6ea870b4d54824c1",
+        "type": "osc",
+        "z": "1312daf792117c43",
+        "name": "",
+        "path": "",
+        "metadata": false,
+        "x": 870,
+        "y": 580,
+        "wires": [
+            [
+                "2437206f4cb8ae44",
+                "a01b9b56ebcd4222"
+            ]
+        ]
+    },
+    {
+        "id": "2437206f4cb8ae44",
+        "type": "udp out",
+        "z": "1312daf792117c43",
+        "name": "",
+        "addr": "127.0.0.1",
+        "iface": "",
+        "port": "56418",
+        "ipv": "udp4",
+        "outport": "",
+        "base64": false,
+        "multicast": "false",
+        "x": 1080,
+        "y": 560,
+        "wires": []
+    },
+    {
+        "id": "b4165695f3c75e96",
+        "type": "comment",
+        "z": "1312daf792117c43",
+        "name": "Send to mididings",
+        "info": "",
+        "x": 110,
+        "y": 340,
+        "wires": []
+    },
+    {
+        "id": "6cfa4a9dceea8af6",
+        "type": "ui_button",
+        "z": "1312daf792117c43",
+        "name": "",
+        "group": "b1df786c93ec53f2",
+        "order": 5,
+        "width": 3,
+        "height": 1,
+        "passthru": true,
+        "label": "Next Scene",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "/mididings/next_scene",
+        "topicType": "str",
+        "x": 330,
+        "y": 580,
+        "wires": [
+            [
+                "961f7f104d693837"
+            ]
+        ]
+    },
+    {
+        "id": "a01b9b56ebcd4222",
+        "type": "debug",
+        "z": "1312daf792117c43",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1030,
+        "y": 600,
+        "wires": []
+    },
+    {
+        "id": "961f7f104d693837",
+        "type": "change",
+        "z": "1312daf792117c43",
+        "name": "RemovePayload",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 680,
+        "y": 540,
+        "wires": [
+            [
+                "6ea870b4d54824c1"
+            ]
+        ]
+    },
+    {
+        "id": "f4f18f04dde02efb",
+        "type": "ui_button",
+        "z": "1312daf792117c43",
+        "name": "",
+        "group": "b1df786c93ec53f2",
+        "order": 2,
+        "width": 3,
+        "height": 1,
+        "passthru": true,
+        "label": "Prev Scene",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "/mididings/prev_scene",
+        "topicType": "str",
+        "x": 330,
+        "y": 540,
+        "wires": [
+            [
+                "961f7f104d693837"
+            ]
+        ]
+    },
+    {
+        "id": "037f26983a0fa8d3",
+        "type": "ui_button",
+        "z": "1312daf792117c43",
+        "name": "",
+        "group": "b1df786c93ec53f2",
+        "order": 4,
+        "width": 3,
+        "height": 1,
+        "passthru": true,
+        "label": "Next Sub Scene",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "/mididings/next_subscene",
+        "topicType": "str",
+        "x": 320,
+        "y": 500,
+        "wires": [
+            [
+                "961f7f104d693837"
+            ]
+        ]
+    },
+    {
+        "id": "2e09ed47c0d034d4",
+        "type": "ui_button",
+        "z": "1312daf792117c43",
+        "name": "",
+        "group": "b1df786c93ec53f2",
+        "order": 3,
+        "width": 3,
+        "height": 1,
+        "passthru": true,
+        "label": "Prev Sub Scene",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "/mididings/prev_subscene",
+        "topicType": "str",
+        "x": 320,
+        "y": 460,
+        "wires": [
+            [
+                "961f7f104d693837"
+            ]
+        ]
+    },
+    {
+        "id": "a5a2e2bf449f3fa1",
+        "type": "inject",
+        "z": "1312daf792117c43",
+        "name": "",
+        "props": [],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 90,
+        "y": 460,
+        "wires": [
+            [
+                "2e09ed47c0d034d4"
+            ]
+        ]
+    },
+    {
+        "id": "ee6455110066a842",
+        "type": "inject",
+        "z": "1312daf792117c43",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 100,
+        "y": 500,
+        "wires": [
+            [
+                "037f26983a0fa8d3"
+            ]
+        ]
+    },
+    {
+        "id": "4c9e601e4a7cc9da",
+        "type": "inject",
+        "z": "1312daf792117c43",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 100,
+        "y": 540,
+        "wires": [
+            [
+                "f4f18f04dde02efb"
+            ]
+        ]
+    },
+    {
+        "id": "bb3151c1543a8793",
+        "type": "inject",
+        "z": "1312daf792117c43",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 100,
+        "y": 580,
+        "wires": [
+            [
+                "6cfa4a9dceea8af6"
+            ]
+        ]
+    },
+    {
+        "id": "362ef12418cacfde",
+        "type": "inject",
+        "z": "1312daf792117c43",
+        "name": "",
+        "props": [],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 90,
+        "y": 420,
+        "wires": [
+            [
+                "f1a6ba3d654a58b0"
+            ]
+        ]
+    },
+    {
+        "id": "88baf02c36c1e5d3",
+        "type": "inject",
+        "z": "1312daf792117c43",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 100,
+        "y": 620,
+        "wires": [
+            [
+                "dd55d635fefad12b"
+            ]
+        ]
+    },
+    {
+        "id": "dd55d635fefad12b",
+        "type": "ui_button",
+        "z": "1312daf792117c43",
+        "name": "",
+        "group": "b8ee07816fbc9b82",
+        "order": 3,
+        "width": 3,
+        "height": 1,
+        "passthru": true,
+        "label": "Quit",
+        "tooltip": "",
+        "color": "black",
+        "bgcolor": "red",
+        "className": "",
+        "icon": "",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "/mididings/quit",
+        "topicType": "str",
+        "x": 350,
+        "y": 620,
+        "wires": [
+            [
+                "961f7f104d693837"
+            ]
+        ]
+    },
+    {
+        "id": "a895b8e1a44923be",
+        "type": "inject",
+        "z": "1312daf792117c43",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 100,
+        "y": 660,
+        "wires": [
+            [
+                "407e326d9c99bbc4"
+            ]
+        ]
+    },
+    {
+        "id": "407e326d9c99bbc4",
+        "type": "ui_button",
+        "z": "1312daf792117c43",
+        "name": "",
+        "group": "b8ee07816fbc9b82",
+        "order": 2,
+        "width": 3,
+        "height": 1,
+        "passthru": true,
+        "label": "Restart",
+        "tooltip": "",
+        "color": "black",
+        "bgcolor": "yellow",
+        "className": "",
+        "icon": "",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "/mididings/restart",
+        "topicType": "str",
+        "x": 340,
+        "y": 660,
+        "wires": [
+            [
+                "961f7f104d693837"
+            ]
+        ]
+    },
+    {
+        "id": "184c3a26dd92639b",
+        "type": "inject",
+        "z": "1312daf792117c43",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 100,
+        "y": 700,
+        "wires": [
+            [
+                "82e8f99a61613c9b"
+            ]
+        ]
+    },
+    {
+        "id": "82e8f99a61613c9b",
+        "type": "ui_button",
+        "z": "1312daf792117c43",
+        "name": "",
+        "group": "b8ee07816fbc9b82",
+        "order": 1,
+        "width": 3,
+        "height": 1,
+        "passthru": true,
+        "label": "Panic",
+        "tooltip": "",
+        "color": "black",
+        "bgcolor": "yellow",
+        "className": "",
+        "icon": "",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "/mididings/panic",
+        "topicType": "str",
+        "x": 350,
+        "y": 700,
+        "wires": [
+            [
+                "961f7f104d693837"
+            ]
+        ]
+    },
+    {
+        "id": "623462e011237301",
+        "type": "switch",
+        "z": "1312daf792117c43",
+        "name": "",
+        "property": "raw.address",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "/mididings/data_offset",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "/mididings/begin_scenes",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "/mididings/add_scene",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "/mididings/end_scenes",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "/mididings/current_scene",
+                "vt": "str"
+            }
+        ],
+        "checkall": "false",
+        "repair": false,
+        "outputs": 5,
+        "x": 430,
+        "y": 200,
+        "wires": [
+            [
+                "3f424f46c2eb2c71"
+            ],
+            [
+                "2c2785bdfe0fd4c2"
+            ],
+            [
+                "84f7e6a4ecbdb4af"
+            ],
+            [
+                "e71bb537452084be"
+            ],
+            [
+                "63088dd9806b5b82"
+            ]
+        ],
+        "outputLabels": [
+            "offset",
+            "",
+            "",
+            "",
+            ""
+        ]
+    },
+    {
+        "id": "40a7f8b5845bd66e",
+        "type": "debug",
+        "z": "1312daf792117c43",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "raw",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 440,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "3f424f46c2eb2c71",
+        "type": "change",
+        "z": "1312daf792117c43",
+        "name": "Set Data Offset",
+        "rules": [
+            {
+                "t": "set",
+                "p": "data_offset",
+                "pt": "flow",
+                "to": "raw.args",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 660,
+        "y": 80,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "c3bee066ccb688a9",
+        "type": "ui_text",
+        "z": "1312daf792117c43",
+        "group": "b1df786c93ec53f2",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "switching to scene",
+        "format": "{{msg.raw.args[0]}}.{{msg.raw.args[1]}} : {{msg.scene_name}}",
+        "layout": "row-left",
+        "className": "",
+        "x": 910,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "2c2785bdfe0fd4c2",
+        "type": "change",
+        "z": "1312daf792117c43",
+        "name": "Init Scenes",
+        "rules": [
+            {
+                "t": "set",
+                "p": "scenes",
+                "pt": "flow",
+                "to": "[]",
+                "tot": "jsonata"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 650,
+        "y": 120,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "84f7e6a4ecbdb4af",
+        "type": "function",
+        "z": "1312daf792117c43",
+        "name": "Add Scene",
+        "func": "var scenes = flow.get('scenes')\nscenes.push(msg.raw.args)\nflow.set('scenes', scenes)\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 650,
+        "y": 160,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "dd74fb1266214629",
+        "type": "catch",
+        "z": "1312daf792117c43",
+        "name": "",
+        "scope": null,
+        "uncaught": false,
+        "x": 440,
+        "y": 60,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "63088dd9806b5b82",
+        "type": "function",
+        "z": "1312daf792117c43",
+        "name": "Set Current Scene",
+        "func": "\nflow.set('current_scene', msg.raw.args)\n\n//offset = flow.get('data_offset');\nscenes = flow.get('scenes');\n\nindex = msg.raw.args[0]-1;          // Scene ID\nsub_index = msg.raw.args[1]+1;      // Sub Scene ID\n\nhas_subscene = scenes[index].length > 2;\n//flow.set('has_subscene', has_subscene)\n\nname=scenes[index][1];\n\nif (has_subscene)\n    name = name + ' - ' + scenes[index][sub_index];\n\n//flow.set('scene_name', name);\n\nmsg.scene_name = name;\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 670,
+        "y": 260,
+        "wires": [
+            [
+                "c3bee066ccb688a9",
+                "df45bc3dd155734a"
+            ]
+        ]
+    },
+    {
+        "id": "df45bc3dd155734a",
+        "type": "debug",
+        "z": "1312daf792117c43",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 870,
+        "y": 320,
+        "wires": []
+    },
+    {
+        "id": "f1a6ba3d654a58b0",
+        "type": "ui_button",
+        "z": "1312daf792117c43",
+        "name": "",
+        "group": "b8ee07816fbc9b82",
+        "order": 1,
+        "width": 3,
+        "height": 1,
+        "passthru": true,
+        "label": "Query",
+        "tooltip": "",
+        "color": "black",
+        "bgcolor": "yellow",
+        "className": "",
+        "icon": "",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "/mididings/query",
+        "topicType": "str",
+        "x": 350,
+        "y": 420,
+        "wires": [
+            [
+                "961f7f104d693837"
+            ]
+        ]
+    },
+    {
+        "id": "e71bb537452084be",
+        "type": "ui_template",
+        "z": "1312daf792117c43",
+        "group": "3ba7f30bd79e35d7",
+        "name": "",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "format": "<div ng-bind-html=\"flow.scenes\"></div>",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "",
+        "x": 640,
+        "y": 200,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "b1df786c93ec53f2",
+        "type": "ui_group",
+        "name": "Navigation",
+        "tab": "231f06ce466e9ede",
+        "order": 1,
+        "disp": true,
+        "width": 12,
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "b8ee07816fbc9b82",
+        "type": "ui_group",
+        "name": "Action",
+        "tab": "231f06ce466e9ede",
+        "order": 2,
+        "disp": true,
+        "width": 9,
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "3ba7f30bd79e35d7",
+        "type": "ui_group",
+        "name": "Scenes",
+        "tab": "231f06ce466e9ede",
+        "order": 3,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "231f06ce466e9ede",
+        "type": "ui_tab",
+        "name": "MIDIDINGS",
+        "icon": "dashboard",
+        "order": 5,
+        "disabled": false,
+        "hidden": false
+    }
+]
