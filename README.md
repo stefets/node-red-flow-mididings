@@ -2,7 +2,7 @@
 A Node Red Flow that provide a UI for mididings
 
 # Presentation
-This flow allow the control of mididings with the OSC protocol. It is the Node Red version of my Flaskdings application. If you are a programmer you may use Flaskings instead which is dynamic and faster. If you are not a programmer, you may use this flow and you can change the UI as you want and there is very few javascript code. However, the Noed Red UI is a static layout of 16 scenes and 32 subscenes and can be extend if you want in the flow editor.
+This flow allow the control of mididings with the OSC protocol. It is the Node Red version of my Flaskdings application. If you are a programmer you may use Flaskings instead which is dynamic and faster. If you are not a programmer, you may use this flow and you can change the UI as you want and there is very few javascript code. However, the Node Red UI is a static layout of 16 scenes and 32 subscenes and can be extend if you want in the flow editor.
 
 # The UI
 <img src="/assets/ui.png" />
