@@ -1,8 +1,7 @@
-[
-    {
+[{
         "id": "1312daf792117c43",
         "type": "tab",
-        "label": "OSC",
+        "label": "mididings-nav",
         "disabled": false,
         "info": "",
         "env": []
@@ -18,8 +17,8 @@
         "multicast": "false",
         "group": "",
         "datatype": "buffer",
-        "x": 100,
-        "y": 200,
+        "x": 400,
+        "y": 1020,
         "wires": [
             [
                 "62e115079a64058c"
@@ -33,8 +32,8 @@
         "name": "",
         "path": "",
         "metadata": false,
-        "x": 250,
-        "y": 200,
+        "x": 550,
+        "y": 1020,
         "wires": [
             [
                 "623462e011237301",
@@ -46,10 +45,10 @@
         "id": "2d165e2675c65c29",
         "type": "comment",
         "z": "1312daf792117c43",
-        "name": "Receiving messages on UDP port 3334",
+        "name": "Receiving messages on UDP port 56419",
         "info": "",
-        "x": 170,
-        "y": 40,
+        "x": 460,
+        "y": 980,
         "wires": []
     },
     {
@@ -59,8 +58,8 @@
         "name": "",
         "path": "",
         "metadata": false,
-        "x": 870,
-        "y": 580,
+        "x": 3450,
+        "y": 1060,
         "wires": [
             [
                 "2437206f4cb8ae44",
@@ -80,18 +79,18 @@
         "outport": "",
         "base64": false,
         "multicast": "false",
-        "x": 1080,
-        "y": 560,
+        "x": 3680,
+        "y": 1040,
         "wires": []
     },
     {
         "id": "b4165695f3c75e96",
         "type": "comment",
         "z": "1312daf792117c43",
-        "name": "Send to mididings",
+        "name": "mididings commands",
         "info": "",
-        "x": 110,
-        "y": 340,
+        "x": 1880,
+        "y": 860,
         "wires": []
     },
     {
@@ -100,22 +99,22 @@
         "z": "1312daf792117c43",
         "name": "",
         "group": "b1df786c93ec53f2",
-        "order": 5,
-        "width": 3,
+        "order": 59,
+        "width": 4,
         "height": 1,
         "passthru": true,
-        "label": "Next Scene",
+        "label": "Next scene",
         "tooltip": "",
         "color": "",
-        "bgcolor": "",
+        "bgcolor": "dodgerblue",
         "className": "",
         "icon": "",
         "payload": "",
         "payloadType": "str",
         "topic": "/mididings/next_scene",
         "topicType": "str",
-        "x": 330,
-        "y": 580,
+        "x": 2110,
+        "y": 1080,
         "wires": [
             [
                 "961f7f104d693837"
@@ -135,8 +134,8 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1030,
-        "y": 600,
+        "x": 3630,
+        "y": 1100,
         "wires": []
     },
     {
@@ -144,25 +143,23 @@
         "type": "change",
         "z": "1312daf792117c43",
         "name": "RemovePayload",
-        "rules": [
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "",
-                "tot": "str"
-            }
-        ],
+        "rules": [{
+            "t": "set",
+            "p": "payload",
+            "pt": "msg",
+            "to": "",
+            "tot": "str"
+        }],
         "action": "",
         "property": "",
         "from": "",
         "to": "",
         "reg": false,
-        "x": 680,
-        "y": 540,
+        "x": 2440,
+        "y": 1060,
         "wires": [
             [
-                "6ea870b4d54824c1"
+                "f2910af4bf638bae"
             ]
         ]
     },
@@ -172,22 +169,22 @@
         "z": "1312daf792117c43",
         "name": "",
         "group": "b1df786c93ec53f2",
-        "order": 2,
-        "width": 3,
+        "order": 56,
+        "width": 4,
         "height": 1,
         "passthru": true,
-        "label": "Prev Scene",
+        "label": "Previous scene",
         "tooltip": "",
         "color": "",
-        "bgcolor": "",
+        "bgcolor": "dodgerblue",
         "className": "",
         "icon": "",
         "payload": "",
         "payloadType": "str",
         "topic": "/mididings/prev_scene",
         "topicType": "str",
-        "x": 330,
-        "y": 540,
+        "x": 2100,
+        "y": 1040,
         "wires": [
             [
                 "961f7f104d693837"
@@ -200,22 +197,22 @@
         "z": "1312daf792117c43",
         "name": "",
         "group": "b1df786c93ec53f2",
-        "order": 4,
-        "width": 3,
+        "order": 58,
+        "width": 4,
         "height": 1,
         "passthru": true,
-        "label": "Next Sub Scene",
+        "label": "Next Sub-Scene",
         "tooltip": "",
         "color": "",
-        "bgcolor": "",
+        "bgcolor": "blue",
         "className": "",
         "icon": "",
         "payload": "",
         "payloadType": "str",
         "topic": "/mididings/next_subscene",
         "topicType": "str",
-        "x": 320,
-        "y": 500,
+        "x": 2100,
+        "y": 1000,
         "wires": [
             [
                 "961f7f104d693837"
@@ -228,44 +225,25 @@
         "z": "1312daf792117c43",
         "name": "",
         "group": "b1df786c93ec53f2",
-        "order": 3,
-        "width": 3,
+        "order": 57,
+        "width": 4,
         "height": 1,
         "passthru": true,
-        "label": "Prev Sub Scene",
+        "label": "Previous Sub-Scene",
         "tooltip": "",
         "color": "",
-        "bgcolor": "",
-        "className": "",
+        "bgcolor": "blue",
+        "className": "navigator",
         "icon": "",
         "payload": "",
         "payloadType": "str",
         "topic": "/mididings/prev_subscene",
         "topicType": "str",
-        "x": 320,
-        "y": 460,
+        "x": 2080,
+        "y": 960,
         "wires": [
             [
                 "961f7f104d693837"
-            ]
-        ]
-    },
-    {
-        "id": "a5a2e2bf449f3fa1",
-        "type": "inject",
-        "z": "1312daf792117c43",
-        "name": "",
-        "props": [],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "x": 90,
-        "y": 460,
-        "wires": [
-            [
-                "2e09ed47c0d034d4"
             ]
         ]
     },
@@ -274,8 +252,7 @@
         "type": "inject",
         "z": "1312daf792117c43",
         "name": "",
-        "props": [
-            {
+        "props": [{
                 "p": "payload"
             },
             {
@@ -290,8 +267,8 @@
         "topic": "",
         "payload": "",
         "payloadType": "date",
-        "x": 100,
-        "y": 500,
+        "x": 1860,
+        "y": 1000,
         "wires": [
             [
                 "037f26983a0fa8d3"
@@ -303,8 +280,7 @@
         "type": "inject",
         "z": "1312daf792117c43",
         "name": "",
-        "props": [
-            {
+        "props": [{
                 "p": "payload"
             },
             {
@@ -319,8 +295,8 @@
         "topic": "",
         "payload": "",
         "payloadType": "date",
-        "x": 100,
-        "y": 540,
+        "x": 1860,
+        "y": 1040,
         "wires": [
             [
                 "f4f18f04dde02efb"
@@ -332,8 +308,7 @@
         "type": "inject",
         "z": "1312daf792117c43",
         "name": "",
-        "props": [
-            {
+        "props": [{
                 "p": "payload"
             },
             {
@@ -348,30 +323,11 @@
         "topic": "",
         "payload": "",
         "payloadType": "date",
-        "x": 100,
-        "y": 580,
+        "x": 1860,
+        "y": 1080,
         "wires": [
             [
                 "6cfa4a9dceea8af6"
-            ]
-        ]
-    },
-    {
-        "id": "362ef12418cacfde",
-        "type": "inject",
-        "z": "1312daf792117c43",
-        "name": "",
-        "props": [],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "x": 90,
-        "y": 420,
-        "wires": [
-            [
-                "f1a6ba3d654a58b0"
             ]
         ]
     },
@@ -380,8 +336,7 @@
         "type": "inject",
         "z": "1312daf792117c43",
         "name": "",
-        "props": [
-            {
+        "props": [{
                 "p": "payload"
             },
             {
@@ -396,8 +351,8 @@
         "topic": "",
         "payload": "",
         "payloadType": "date",
-        "x": 100,
-        "y": 620,
+        "x": 1860,
+        "y": 1120,
         "wires": [
             [
                 "dd55d635fefad12b"
@@ -409,23 +364,23 @@
         "type": "ui_button",
         "z": "1312daf792117c43",
         "name": "",
-        "group": "b8ee07816fbc9b82",
-        "order": 3,
-        "width": 3,
+        "group": "b1df786c93ec53f2",
+        "order": 5,
+        "width": 2,
         "height": 1,
         "passthru": true,
         "label": "Quit",
         "tooltip": "",
         "color": "black",
-        "bgcolor": "red",
+        "bgcolor": "orange",
         "className": "",
-        "icon": "",
+        "icon": "close",
         "payload": "",
         "payloadType": "str",
         "topic": "/mididings/quit",
         "topicType": "str",
-        "x": 350,
-        "y": 620,
+        "x": 2130,
+        "y": 1120,
         "wires": [
             [
                 "961f7f104d693837"
@@ -437,8 +392,7 @@
         "type": "inject",
         "z": "1312daf792117c43",
         "name": "",
-        "props": [
-            {
+        "props": [{
                 "p": "payload"
             },
             {
@@ -453,8 +407,8 @@
         "topic": "",
         "payload": "",
         "payloadType": "date",
-        "x": 100,
-        "y": 660,
+        "x": 1860,
+        "y": 1160,
         "wires": [
             [
                 "407e326d9c99bbc4"
@@ -466,23 +420,23 @@
         "type": "ui_button",
         "z": "1312daf792117c43",
         "name": "",
-        "group": "b8ee07816fbc9b82",
-        "order": 2,
-        "width": 3,
+        "group": "b1df786c93ec53f2",
+        "order": 3,
+        "width": 2,
         "height": 1,
         "passthru": true,
         "label": "Restart",
         "tooltip": "",
-        "color": "black",
-        "bgcolor": "yellow",
+        "color": "white",
+        "bgcolor": "green",
         "className": "",
-        "icon": "",
+        "icon": "refresh",
         "payload": "",
         "payloadType": "str",
         "topic": "/mididings/restart",
         "topicType": "str",
-        "x": 340,
-        "y": 660,
+        "x": 2120,
+        "y": 1160,
         "wires": [
             [
                 "961f7f104d693837"
@@ -494,8 +448,7 @@
         "type": "inject",
         "z": "1312daf792117c43",
         "name": "",
-        "props": [
-            {
+        "props": [{
                 "p": "payload"
             },
             {
@@ -510,8 +463,8 @@
         "topic": "",
         "payload": "",
         "payloadType": "date",
-        "x": 100,
-        "y": 700,
+        "x": 1860,
+        "y": 1200,
         "wires": [
             [
                 "82e8f99a61613c9b"
@@ -522,10 +475,10 @@
         "id": "82e8f99a61613c9b",
         "type": "ui_button",
         "z": "1312daf792117c43",
-        "name": "",
-        "group": "b8ee07816fbc9b82",
-        "order": 1,
-        "width": 3,
+        "name": "Panic",
+        "group": "b1df786c93ec53f2",
+        "order": 2,
+        "width": 2,
         "height": 1,
         "passthru": true,
         "label": "Panic",
@@ -533,13 +486,13 @@
         "color": "black",
         "bgcolor": "yellow",
         "className": "",
-        "icon": "",
+        "icon": "warning",
         "payload": "",
         "payloadType": "str",
         "topic": "/mididings/panic",
         "topicType": "str",
-        "x": 350,
-        "y": 700,
+        "x": 2130,
+        "y": 1200,
         "wires": [
             [
                 "961f7f104d693837"
@@ -553,8 +506,7 @@
         "name": "",
         "property": "raw.address",
         "propertyType": "msg",
-        "rules": [
-            {
+        "rules": [{
                 "t": "eq",
                 "v": "/mididings/data_offset",
                 "vt": "str"
@@ -583,11 +535,12 @@
         "checkall": "false",
         "repair": false,
         "outputs": 5,
-        "x": 430,
-        "y": 200,
+        "x": 710,
+        "y": 1020,
         "wires": [
             [
-                "3f424f46c2eb2c71"
+                "3f424f46c2eb2c71",
+                "ae1b4e3d847c09fa"
             ],
             [
                 "2c2785bdfe0fd4c2"
@@ -595,9 +548,7 @@
             [
                 "84f7e6a4ecbdb4af"
             ],
-            [
-                "e71bb537452084be"
-            ],
+            [],
             [
                 "63088dd9806b5b82"
             ]
@@ -615,7 +566,7 @@
         "type": "debug",
         "z": "1312daf792117c43",
         "name": "",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -623,8 +574,8 @@
         "targetType": "msg",
         "statusVal": "",
         "statusType": "auto",
-        "x": 440,
-        "y": 100,
+        "x": 720,
+        "y": 1100,
         "wires": []
     },
     {
@@ -632,22 +583,20 @@
         "type": "change",
         "z": "1312daf792117c43",
         "name": "Set Data Offset",
-        "rules": [
-            {
-                "t": "set",
-                "p": "data_offset",
-                "pt": "flow",
-                "to": "raw.args",
-                "tot": "msg"
-            }
-        ],
+        "rules": [{
+            "t": "set",
+            "p": "data_offset",
+            "pt": "flow",
+            "to": "raw.args",
+            "tot": "msg"
+        }],
         "action": "",
         "property": "",
         "from": "",
         "to": "",
         "reg": false,
-        "x": 660,
-        "y": 80,
+        "x": 960,
+        "y": 940,
         "wires": [
             []
         ]
@@ -656,17 +605,18 @@
         "id": "c3bee066ccb688a9",
         "type": "ui_text",
         "z": "1312daf792117c43",
+        "d": true,
         "group": "b1df786c93ec53f2",
         "order": 1,
-        "width": 0,
-        "height": 0,
+        "width": 24,
+        "height": 1,
         "name": "",
         "label": "switching to scene",
         "format": "{{msg.raw.args[0]}}.{{msg.raw.args[1]}} : {{msg.scene_name}}",
         "layout": "row-left",
         "className": "",
-        "x": 910,
-        "y": 260,
+        "x": 1190,
+        "y": 1140,
         "wires": []
     },
     {
@@ -674,22 +624,20 @@
         "type": "change",
         "z": "1312daf792117c43",
         "name": "Init Scenes",
-        "rules": [
-            {
-                "t": "set",
-                "p": "scenes",
-                "pt": "flow",
-                "to": "[]",
-                "tot": "jsonata"
-            }
-        ],
+        "rules": [{
+            "t": "set",
+            "p": "scenes",
+            "pt": "flow",
+            "to": "[]",
+            "tot": "jsonata"
+        }],
         "action": "",
         "property": "",
         "from": "",
         "to": "",
         "reg": false,
-        "x": 650,
-        "y": 120,
+        "x": 950,
+        "y": 1020,
         "wires": [
             []
         ]
@@ -699,14 +647,14 @@
         "type": "function",
         "z": "1312daf792117c43",
         "name": "Add Scene",
-        "func": "var scenes = flow.get('scenes')\nscenes.push(msg.raw.args)\nflow.set('scenes', scenes)\nreturn msg;",
+        "func": "// Get scenes\nvar scenes = flow.get('scenes')\n\n// Add scene to collection\nscenes.push(msg.raw.args)\n\n// Add collection to flow context\nflow.set('scenes', scenes)\n\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 650,
-        "y": 160,
+        "x": 950,
+        "y": 1060,
         "wires": [
             []
         ]
@@ -718,34 +666,2103 @@
         "name": "",
         "scope": null,
         "uncaught": false,
-        "x": 440,
-        "y": 60,
+        "x": 360,
+        "y": 820,
         "wires": [
-            []
+            [
+                "de83f726a3bf1fcc"
+            ]
         ]
     },
     {
         "id": "63088dd9806b5b82",
         "type": "function",
         "z": "1312daf792117c43",
-        "name": "Set Current Scene",
-        "func": "\nflow.set('current_scene', msg.raw.args)\n\n//offset = flow.get('data_offset');\nscenes = flow.get('scenes');\n\nindex = msg.raw.args[0]-1;          // Scene ID\nsub_index = msg.raw.args[1]+1;      // Sub Scene ID\n\nhas_subscene = scenes[index].length > 2;\n//flow.set('has_subscene', has_subscene)\n\nname=scenes[index][1];\n\nif (has_subscene)\n    name = name + ' - ' + scenes[index][sub_index];\n\n//flow.set('scene_name', name);\n\nmsg.scene_name = name;\n\nreturn msg;",
+        "name": "Current Scene",
+        "func": "\nflow.set('current_scene', msg.raw.args)\n\n//offset = flow.get('data_offset');\nscenes = flow.get('scenes');\n\nindex = msg.raw.args[0]-1;          // Scene ID\nsub_index = msg.raw.args[1]+1;      // Sub Scene ID\n\nhas_subscene = scenes[index].length > 2;\n//flow.set('has_subscene', has_subscene)\n\nname=scenes[index][1];\n\nif (has_subscene)\n    name = name + ' / ' + scenes[index][sub_index];\n\n//flow.set('scene_name', name);\n\nmsg.scene_name = name;\nmsg.cur_scene = msg.raw.args[0];\nmsg.cur_subscene = msg.raw.args[1];\n\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 670,
-        "y": 260,
+        "x": 960,
+        "y": 1100,
         "wires": [
             [
                 "c3bee066ccb688a9",
-                "df45bc3dd155734a"
+                "12382a6f3dacf290",
+                "e91a308e54973520"
             ]
         ]
     },
     {
-        "id": "df45bc3dd155734a",
+        "id": "f1a6ba3d654a58b0",
+        "type": "ui_button",
+        "z": "1312daf792117c43",
+        "name": "",
+        "group": "b1df786c93ec53f2",
+        "order": 4,
+        "width": 2,
+        "height": 1,
+        "passthru": true,
+        "label": "Query",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "blue",
+        "className": "btn1",
+        "icon": "get_app",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "/mididings/query",
+        "topicType": "str",
+        "x": 2130,
+        "y": 920,
+        "wires": [
+            [
+                "961f7f104d693837"
+            ]
+        ]
+    },
+    {
+        "id": "5ec242bce38e62e6",
+        "type": "switch",
+        "z": "1312daf792117c43",
+        "name": "Scene ID",
+        "property": "index",
+        "propertyType": "msg",
+        "rules": [{
+                "t": "eq",
+                "v": "1",
+                "vt": "num"
+            },
+            {
+                "t": "eq",
+                "v": "2",
+                "vt": "num"
+            },
+            {
+                "t": "eq",
+                "v": "3",
+                "vt": "num"
+            },
+            {
+                "t": "eq",
+                "v": "4",
+                "vt": "num"
+            },
+            {
+                "t": "eq",
+                "v": "5",
+                "vt": "num"
+            },
+            {
+                "t": "eq",
+                "v": "6",
+                "vt": "num"
+            },
+            {
+                "t": "eq",
+                "v": "7",
+                "vt": "num"
+            },
+            {
+                "t": "eq",
+                "v": "8",
+                "vt": "num"
+            },
+            {
+                "t": "eq",
+                "v": "9",
+                "vt": "num"
+            },
+            {
+                "t": "eq",
+                "v": "10",
+                "vt": "num"
+            },
+            {
+                "t": "eq",
+                "v": "11",
+                "vt": "num"
+            },
+            {
+                "t": "eq",
+                "v": "12",
+                "vt": "num"
+            },
+            {
+                "t": "eq",
+                "v": "13",
+                "vt": "num"
+            },
+            {
+                "t": "eq",
+                "v": "14",
+                "vt": "num"
+            },
+            {
+                "t": "eq",
+                "v": "15",
+                "vt": "num"
+            },
+            {
+                "t": "eq",
+                "v": "16",
+                "vt": "num"
+            }
+        ],
+        "checkall": "false",
+        "repair": false,
+        "outputs": 16,
+        "x": 2240,
+        "y": 620,
+        "wires": [
+            [
+                "d501d685b219e1ce"
+            ],
+            [
+                "1c3a4f626c130791"
+            ],
+            [
+                "349a6b2a6cd9077a"
+            ],
+            [
+                "662c61f199db5fa9"
+            ],
+            [
+                "5f3fc5de26a346c4"
+            ],
+            [
+                "2a7f315efa65fc73"
+            ],
+            [
+                "4becda50deed56fd"
+            ],
+            [
+                "0a1822044332b849"
+            ],
+            [
+                "e9ef4b43460a6bfb"
+            ],
+            [
+                "c9373cbce18ce5b0"
+            ],
+            [
+                "7a6346683d93d330"
+            ],
+            [
+                "254ce3675bdd28eb"
+            ],
+            [
+                "07421bdfb01e3402"
+            ],
+            [
+                "afc01eb781b7f962"
+            ],
+            [
+                "38ac675bdc9b75a6"
+            ],
+            [
+                "8d88201241980044"
+            ]
+        ]
+    },
+    {
+        "id": "d501d685b219e1ce",
+        "type": "ui_button",
+        "z": "1312daf792117c43",
+        "name": "Scene 1",
+        "group": "b1df786c93ec53f2",
+        "order": 7,
+        "width": 4,
+        "height": 1,
+        "passthru": false,
+        "label": "{{msg.name}}",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "{{color}}",
+        "className": "",
+        "icon": "",
+        "payload": "1",
+        "payloadType": "num",
+        "topic": "/mididings/switch_scene",
+        "topicType": "str",
+        "x": 2540,
+        "y": 340,
+        "wires": [
+            [
+                "f260310473736f34"
+            ]
+        ]
+    },
+    {
+        "id": "f260310473736f34",
+        "type": "link out",
+        "z": "1312daf792117c43",
+        "name": "Submit Scene to OSC",
+        "mode": "link",
+        "links": [
+            "1f2dd22c6e3891b8",
+            "904a3ed8846f25af"
+        ],
+        "x": 3035,
+        "y": 680,
+        "wires": []
+    },
+    {
+        "id": "f10ce8d60a335ff4",
+        "type": "ui_button",
+        "z": "1312daf792117c43",
+        "name": "SubScene1",
+        "group": "b1df786c93ec53f2",
+        "order": 9,
+        "width": 4,
+        "height": 1,
+        "passthru": false,
+        "label": "{{msg.name}}",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "{{color}}",
+        "className": "",
+        "icon": "",
+        "payload": "1",
+        "payloadType": "num",
+        "topic": "/mididings/switch_subscene",
+        "topicType": "str",
+        "x": 2550,
+        "y": 1160,
+        "wires": [
+            [
+                "c5dc9aa1d7c5d5b9"
+            ]
+        ]
+    },
+    {
+        "id": "1c3a4f626c130791",
+        "type": "ui_button",
+        "z": "1312daf792117c43",
+        "name": "Scene 2",
+        "group": "b1df786c93ec53f2",
+        "order": 8,
+        "width": 4,
+        "height": 1,
+        "passthru": false,
+        "label": "{{msg.name}}",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "{{color}}",
+        "className": "",
+        "icon": "",
+        "payload": "2",
+        "payloadType": "num",
+        "topic": "/mididings/switch_scene",
+        "topicType": "str",
+        "x": 2540,
+        "y": 380,
+        "wires": [
+            [
+                "f260310473736f34"
+            ]
+        ]
+    },
+    {
+        "id": "349a6b2a6cd9077a",
+        "type": "ui_button",
+        "z": "1312daf792117c43",
+        "name": "Scene 3",
+        "group": "b1df786c93ec53f2",
+        "order": 13,
+        "width": 4,
+        "height": 1,
+        "passthru": false,
+        "label": "{{msg.name}}",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "{{color}}",
+        "className": "",
+        "icon": "",
+        "payload": "3",
+        "payloadType": "num",
+        "topic": "/mididings/switch_scene",
+        "topicType": "str",
+        "x": 2540,
+        "y": 420,
+        "wires": [
+            [
+                "f260310473736f34"
+            ]
+        ]
+    },
+    {
+        "id": "662c61f199db5fa9",
+        "type": "ui_button",
+        "z": "1312daf792117c43",
+        "name": "Scene 4",
+        "group": "b1df786c93ec53f2",
+        "order": 14,
+        "width": 4,
+        "height": 1,
+        "passthru": false,
+        "label": "{{msg.name}}",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "{{color}}",
+        "className": "",
+        "icon": "",
+        "payload": "4",
+        "payloadType": "num",
+        "topic": "/mididings/switch_scene",
+        "topicType": "str",
+        "x": 2540,
+        "y": 460,
+        "wires": [
+            [
+                "f260310473736f34"
+            ]
+        ]
+    },
+    {
+        "id": "5f3fc5de26a346c4",
+        "type": "ui_button",
+        "z": "1312daf792117c43",
+        "name": "Scene 5",
+        "group": "b1df786c93ec53f2",
+        "order": 19,
+        "width": 4,
+        "height": 1,
+        "passthru": false,
+        "label": "{{msg.name}}",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "{{color}}",
+        "className": "",
+        "icon": "",
+        "payload": "5",
+        "payloadType": "num",
+        "topic": "/mididings/switch_scene",
+        "topicType": "str",
+        "x": 2540,
+        "y": 500,
+        "wires": [
+            [
+                "f260310473736f34"
+            ]
+        ]
+    },
+    {
+        "id": "2a7f315efa65fc73",
+        "type": "ui_button",
+        "z": "1312daf792117c43",
+        "name": "Scene 6",
+        "group": "b1df786c93ec53f2",
+        "order": 20,
+        "width": 4,
+        "height": 1,
+        "passthru": false,
+        "label": "{{msg.name}}",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "{{color}}",
+        "className": "",
+        "icon": "",
+        "payload": "6",
+        "payloadType": "num",
+        "topic": "/mididings/switch_scene",
+        "topicType": "str",
+        "x": 2540,
+        "y": 540,
+        "wires": [
+            [
+                "f260310473736f34"
+            ]
+        ]
+    },
+    {
+        "id": "4becda50deed56fd",
+        "type": "ui_button",
+        "z": "1312daf792117c43",
+        "name": "Scene 7",
+        "group": "b1df786c93ec53f2",
+        "order": 25,
+        "width": 4,
+        "height": 1,
+        "passthru": false,
+        "label": "{{msg.name}}",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "{{color}}",
+        "className": "",
+        "icon": "",
+        "payload": "7",
+        "payloadType": "num",
+        "topic": "/mididings/switch_scene",
+        "topicType": "str",
+        "x": 2540,
+        "y": 580,
+        "wires": [
+            [
+                "f260310473736f34"
+            ]
+        ]
+    },
+    {
+        "id": "0a1822044332b849",
+        "type": "ui_button",
+        "z": "1312daf792117c43",
+        "name": "Scene 8",
+        "group": "b1df786c93ec53f2",
+        "order": 26,
+        "width": 4,
+        "height": 1,
+        "passthru": false,
+        "label": "{{msg.name}}",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "{{color}}",
+        "className": "",
+        "icon": "",
+        "payload": "8",
+        "payloadType": "num",
+        "topic": "/mididings/switch_scene",
+        "topicType": "str",
+        "x": 2540,
+        "y": 620,
+        "wires": [
+            [
+                "f260310473736f34"
+            ]
+        ]
+    },
+    {
+        "id": "e9ef4b43460a6bfb",
+        "type": "ui_button",
+        "z": "1312daf792117c43",
+        "name": "Scene 9",
+        "group": "b1df786c93ec53f2",
+        "order": 31,
+        "width": 4,
+        "height": 1,
+        "passthru": false,
+        "label": "{{msg.name}}",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "{{color}}",
+        "className": "",
+        "icon": "",
+        "payload": "9",
+        "payloadType": "num",
+        "topic": "/mididings/switch_scene",
+        "topicType": "str",
+        "x": 2540,
+        "y": 660,
+        "wires": [
+            [
+                "f260310473736f34"
+            ]
+        ]
+    },
+    {
+        "id": "c9373cbce18ce5b0",
+        "type": "ui_button",
+        "z": "1312daf792117c43",
+        "name": "Scene 10",
+        "group": "b1df786c93ec53f2",
+        "order": 32,
+        "width": 4,
+        "height": 1,
+        "passthru": false,
+        "label": "{{msg.name}}",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "{{color}}",
+        "className": "",
+        "icon": "",
+        "payload": "10",
+        "payloadType": "num",
+        "topic": "/mididings/switch_scene",
+        "topicType": "str",
+        "x": 2540,
+        "y": 700,
+        "wires": [
+            [
+                "f260310473736f34"
+            ]
+        ]
+    },
+    {
+        "id": "7a6346683d93d330",
+        "type": "ui_button",
+        "z": "1312daf792117c43",
+        "name": "Scene 11",
+        "group": "b1df786c93ec53f2",
+        "order": 37,
+        "width": 4,
+        "height": 1,
+        "passthru": false,
+        "label": "{{msg.name}}",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "{{color}}",
+        "className": "",
+        "icon": "",
+        "payload": "11",
+        "payloadType": "num",
+        "topic": "/mididings/switch_scene",
+        "topicType": "str",
+        "x": 2540,
+        "y": 740,
+        "wires": [
+            [
+                "f260310473736f34"
+            ]
+        ]
+    },
+    {
+        "id": "254ce3675bdd28eb",
+        "type": "ui_button",
+        "z": "1312daf792117c43",
+        "name": "Scene 12",
+        "group": "b1df786c93ec53f2",
+        "order": 38,
+        "width": 4,
+        "height": 1,
+        "passthru": false,
+        "label": "{{msg.name}}",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "{{color}}",
+        "className": "",
+        "icon": "",
+        "payload": "12",
+        "payloadType": "num",
+        "topic": "/mididings/switch_scene",
+        "topicType": "str",
+        "x": 2540,
+        "y": 780,
+        "wires": [
+            [
+                "f260310473736f34"
+            ]
+        ]
+    },
+    {
+        "id": "07421bdfb01e3402",
+        "type": "ui_button",
+        "z": "1312daf792117c43",
+        "name": "Scene 13",
+        "group": "b1df786c93ec53f2",
+        "order": 43,
+        "width": 4,
+        "height": 1,
+        "passthru": false,
+        "label": "{{msg.name}}",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "{{color}}",
+        "className": "",
+        "icon": "",
+        "payload": "13",
+        "payloadType": "num",
+        "topic": "/mididings/switch_scene",
+        "topicType": "str",
+        "x": 2540,
+        "y": 820,
+        "wires": [
+            [
+                "f260310473736f34"
+            ]
+        ]
+    },
+    {
+        "id": "afc01eb781b7f962",
+        "type": "ui_button",
+        "z": "1312daf792117c43",
+        "name": "Scene 14",
+        "group": "b1df786c93ec53f2",
+        "order": 44,
+        "width": 4,
+        "height": 1,
+        "passthru": false,
+        "label": "{{msg.name}}",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "{{color}}",
+        "className": "",
+        "icon": "",
+        "payload": "14",
+        "payloadType": "num",
+        "topic": "/mididings/switch_scene",
+        "topicType": "str",
+        "x": 2540,
+        "y": 860,
+        "wires": [
+            [
+                "f260310473736f34"
+            ]
+        ]
+    },
+    {
+        "id": "38ac675bdc9b75a6",
+        "type": "ui_button",
+        "z": "1312daf792117c43",
+        "name": "Scene 15",
+        "group": "b1df786c93ec53f2",
+        "order": 49,
+        "width": 4,
+        "height": 1,
+        "passthru": false,
+        "label": "{{msg.name}}",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "{{color}}",
+        "className": "",
+        "icon": "",
+        "payload": "15",
+        "payloadType": "num",
+        "topic": "/mididings/switch_scene",
+        "topicType": "str",
+        "x": 2540,
+        "y": 900,
+        "wires": [
+            [
+                "f260310473736f34"
+            ]
+        ]
+    },
+    {
+        "id": "8d88201241980044",
+        "type": "ui_button",
+        "z": "1312daf792117c43",
+        "name": "Scene 16",
+        "group": "b1df786c93ec53f2",
+        "order": 50,
+        "width": 4,
+        "height": 1,
+        "passthru": false,
+        "label": "{{msg.name}}",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "{{color}}",
+        "className": "",
+        "icon": "",
+        "payload": "16",
+        "payloadType": "num",
+        "topic": "/mididings/switch_scene",
+        "topicType": "str",
+        "x": 2540,
+        "y": 940,
+        "wires": [
+            [
+                "f260310473736f34"
+            ]
+        ]
+    },
+    {
+        "id": "f7af91922b5d4b84",
+        "type": "inject",
+        "z": "1312daf792117c43",
+        "name": "",
+        "props": [{
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 1860,
+        "y": 920,
+        "wires": [
+            [
+                "f1a6ba3d654a58b0"
+            ]
+        ]
+    },
+    {
+        "id": "8d05641d122b8a1c",
+        "type": "inject",
+        "z": "1312daf792117c43",
+        "name": "",
+        "props": [{
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 1860,
+        "y": 960,
+        "wires": [
+            [
+                "2e09ed47c0d034d4"
+            ]
+        ]
+    },
+    {
+        "id": "bb9a2a7bfdc29653",
+        "type": "switch",
+        "z": "1312daf792117c43",
+        "name": "",
+        "property": "index",
+        "propertyType": "msg",
+        "rules": [{
+                "t": "eq",
+                "v": "0",
+                "vt": "num"
+            },
+            {
+                "t": "eq",
+                "v": "1",
+                "vt": "num"
+            },
+            {
+                "t": "eq",
+                "v": "2",
+                "vt": "num"
+            },
+            {
+                "t": "eq",
+                "v": "3",
+                "vt": "num"
+            },
+            {
+                "t": "eq",
+                "v": "4",
+                "vt": "num"
+            },
+            {
+                "t": "eq",
+                "v": "5",
+                "vt": "num"
+            },
+            {
+                "t": "eq",
+                "v": "6",
+                "vt": "num"
+            },
+            {
+                "t": "eq",
+                "v": "7",
+                "vt": "num"
+            },
+            {
+                "t": "eq",
+                "v": "8",
+                "vt": "num"
+            },
+            {
+                "t": "eq",
+                "v": "9",
+                "vt": "num"
+            },
+            {
+                "t": "eq",
+                "v": "10",
+                "vt": "num"
+            },
+            {
+                "t": "eq",
+                "v": "11",
+                "vt": "num"
+            },
+            {
+                "t": "eq",
+                "v": "12",
+                "vt": "num"
+            },
+            {
+                "t": "eq",
+                "v": "13",
+                "vt": "num"
+            },
+            {
+                "t": "eq",
+                "v": "14",
+                "vt": "num"
+            },
+            {
+                "t": "eq",
+                "v": "15",
+                "vt": "num"
+            },
+            {
+                "t": "eq",
+                "v": "16",
+                "vt": "num"
+            },
+            {
+                "t": "eq",
+                "v": "17",
+                "vt": "num"
+            },
+            {
+                "t": "eq",
+                "v": "18",
+                "vt": "num"
+            },
+            {
+                "t": "eq",
+                "v": "19",
+                "vt": "num"
+            },
+            {
+                "t": "eq",
+                "v": "20",
+                "vt": "num"
+            },
+            {
+                "t": "eq",
+                "v": "21",
+                "vt": "num"
+            },
+            {
+                "t": "eq",
+                "v": "22",
+                "vt": "num"
+            },
+            {
+                "t": "eq",
+                "v": "23",
+                "vt": "num"
+            },
+            {
+                "t": "eq",
+                "v": "24",
+                "vt": "num"
+            },
+            {
+                "t": "eq",
+                "v": "25",
+                "vt": "num"
+            },
+            {
+                "t": "eq",
+                "v": "26",
+                "vt": "num"
+            },
+            {
+                "t": "eq",
+                "v": "27",
+                "vt": "num"
+            },
+            {
+                "t": "eq",
+                "v": "28",
+                "vt": "num"
+            },
+            {
+                "t": "eq",
+                "v": "29",
+                "vt": "num"
+            },
+            {
+                "t": "eq",
+                "v": "30",
+                "vt": "num"
+            },
+            {
+                "t": "eq",
+                "v": "31",
+                "vt": "num"
+            },
+            {
+                "t": "eq",
+                "v": "32",
+                "vt": "num"
+            },
+            {
+                "t": "eq",
+                "v": "33",
+                "vt": "num"
+            }
+        ],
+        "checkall": "false",
+        "repair": false,
+        "outputs": 34,
+        "x": 2230,
+        "y": 1700,
+        "wires": [
+            [],
+            [],
+            [
+                "f10ce8d60a335ff4"
+            ],
+            [
+                "8296524908244f4b"
+            ],
+            [
+                "6019d00cb2f861f5"
+            ],
+            [
+                "8c533540afaafbb0"
+            ],
+            [
+                "df0f01e08db8d0e4"
+            ],
+            [
+                "70b8df970fcaa687"
+            ],
+            [
+                "1416217ee1dc3b2c"
+            ],
+            [
+                "130c3ccf5a703a5e"
+            ],
+            [
+                "20a18886ccbfd18b"
+            ],
+            [
+                "29e2797bcdf79a4e"
+            ],
+            [
+                "bd87abb6d91c8449"
+            ],
+            [
+                "db577ef5126fe0f3"
+            ],
+            [
+                "b6c6a234a8daa7d1"
+            ],
+            [
+                "f40bcb47e4db3ff2"
+            ],
+            [
+                "a4f93019c6825c1e"
+            ],
+            [
+                "010fbf7689776445"
+            ],
+            [
+                "800496188cd7de44"
+            ],
+            [
+                "82b0f3de414feb6d"
+            ],
+            [
+                "50eba8223d9e9a47"
+            ],
+            [
+                "081263a8ec5b1b86"
+            ],
+            [
+                "4e0adf0eceec7f3d"
+            ],
+            [
+                "0d08a94a2c678c6c"
+            ],
+            [
+                "34900bce0fb13649"
+            ],
+            [
+                "3e15ec20c8a9cf3f"
+            ],
+            [
+                "69cea060c474a75c"
+            ],
+            [
+                "a094198acddda241"
+            ],
+            [
+                "f841b8919e5035e2"
+            ],
+            [
+                "690a75f7ac428d06"
+            ],
+            [
+                "82d9dd7eaf82933a"
+            ],
+            [
+                "2485dc131243dda9"
+            ],
+            [
+                "2e5d966baef7503d"
+            ],
+            [
+                "f969487c45528122"
+            ]
+        ]
+    },
+    {
+        "id": "8296524908244f4b",
+        "type": "ui_button",
+        "z": "1312daf792117c43",
+        "name": "SubScene2",
+        "group": "b1df786c93ec53f2",
+        "order": 10,
+        "width": 4,
+        "height": 1,
+        "passthru": false,
+        "label": "{{msg.name}}",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "{{color}}",
+        "className": "",
+        "icon": "",
+        "payload": "2",
+        "payloadType": "num",
+        "topic": "/mididings/switch_subscene",
+        "topicType": "str",
+        "x": 2550,
+        "y": 1200,
+        "wires": [
+            [
+                "c5dc9aa1d7c5d5b9"
+            ]
+        ]
+    },
+    {
+        "id": "6019d00cb2f861f5",
+        "type": "ui_button",
+        "z": "1312daf792117c43",
+        "name": "SubScene3",
+        "group": "b1df786c93ec53f2",
+        "order": 11,
+        "width": 4,
+        "height": 1,
+        "passthru": false,
+        "label": "{{msg.name}}",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "{{color}}",
+        "className": "",
+        "icon": "",
+        "payload": "3",
+        "payloadType": "num",
+        "topic": "/mididings/switch_subscene",
+        "topicType": "str",
+        "x": 2550,
+        "y": 1240,
+        "wires": [
+            [
+                "c5dc9aa1d7c5d5b9"
+            ]
+        ]
+    },
+    {
+        "id": "8c533540afaafbb0",
+        "type": "ui_button",
+        "z": "1312daf792117c43",
+        "name": "SubScene4",
+        "group": "b1df786c93ec53f2",
+        "order": 12,
+        "width": 4,
+        "height": 1,
+        "passthru": false,
+        "label": "{{msg.name}}",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "{{color}}",
+        "className": "",
+        "icon": "",
+        "payload": "4",
+        "payloadType": "num",
+        "topic": "/mididings/switch_subscene",
+        "topicType": "str",
+        "x": 2550,
+        "y": 1280,
+        "wires": [
+            [
+                "c5dc9aa1d7c5d5b9"
+            ]
+        ]
+    },
+    {
+        "id": "df0f01e08db8d0e4",
+        "type": "ui_button",
+        "z": "1312daf792117c43",
+        "name": "SubScene5",
+        "group": "b1df786c93ec53f2",
+        "order": 15,
+        "width": 4,
+        "height": 1,
+        "passthru": false,
+        "label": "{{msg.name}}",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "{{color}}",
+        "className": "",
+        "icon": "",
+        "payload": "5",
+        "payloadType": "num",
+        "topic": "/mididings/switch_subscene",
+        "topicType": "str",
+        "x": 2550,
+        "y": 1320,
+        "wires": [
+            [
+                "c5dc9aa1d7c5d5b9"
+            ]
+        ]
+    },
+    {
+        "id": "70b8df970fcaa687",
+        "type": "ui_button",
+        "z": "1312daf792117c43",
+        "name": "SubScene6",
+        "group": "b1df786c93ec53f2",
+        "order": 16,
+        "width": 4,
+        "height": 1,
+        "passthru": false,
+        "label": "{{msg.name}}",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "{{color}}",
+        "className": "",
+        "icon": "",
+        "payload": "6",
+        "payloadType": "num",
+        "topic": "/mididings/switch_subscene",
+        "topicType": "str",
+        "x": 2550,
+        "y": 1360,
+        "wires": [
+            [
+                "c5dc9aa1d7c5d5b9"
+            ]
+        ]
+    },
+    {
+        "id": "1416217ee1dc3b2c",
+        "type": "ui_button",
+        "z": "1312daf792117c43",
+        "name": "SubScene7",
+        "group": "b1df786c93ec53f2",
+        "order": 17,
+        "width": 4,
+        "height": 1,
+        "passthru": false,
+        "label": "{{msg.name}}",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "{{color}}",
+        "className": "",
+        "icon": "",
+        "payload": "7",
+        "payloadType": "num",
+        "topic": "/mididings/switch_subscene",
+        "topicType": "str",
+        "x": 2550,
+        "y": 1400,
+        "wires": [
+            [
+                "c5dc9aa1d7c5d5b9"
+            ]
+        ]
+    },
+    {
+        "id": "130c3ccf5a703a5e",
+        "type": "ui_button",
+        "z": "1312daf792117c43",
+        "name": "SubScene8",
+        "group": "b1df786c93ec53f2",
+        "order": 18,
+        "width": 4,
+        "height": 1,
+        "passthru": false,
+        "label": "{{msg.name}}",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "{{color}}",
+        "className": "",
+        "icon": "",
+        "payload": "8",
+        "payloadType": "num",
+        "topic": "/mididings/switch_subscene",
+        "topicType": "str",
+        "x": 2550,
+        "y": 1440,
+        "wires": [
+            [
+                "c5dc9aa1d7c5d5b9"
+            ]
+        ]
+    },
+    {
+        "id": "20a18886ccbfd18b",
+        "type": "ui_button",
+        "z": "1312daf792117c43",
+        "name": "SubScene9",
+        "group": "b1df786c93ec53f2",
+        "order": 21,
+        "width": 4,
+        "height": 1,
+        "passthru": false,
+        "label": "{{msg.name}}",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "{{color}}",
+        "className": "",
+        "icon": "",
+        "payload": "9",
+        "payloadType": "num",
+        "topic": "/mididings/switch_subscene",
+        "topicType": "str",
+        "x": 2550,
+        "y": 1480,
+        "wires": [
+            [
+                "c5dc9aa1d7c5d5b9"
+            ]
+        ]
+    },
+    {
+        "id": "29e2797bcdf79a4e",
+        "type": "ui_button",
+        "z": "1312daf792117c43",
+        "name": "SubScene10",
+        "group": "b1df786c93ec53f2",
+        "order": 22,
+        "width": 4,
+        "height": 1,
+        "passthru": false,
+        "label": "{{msg.name}}",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "{{color}}",
+        "className": "",
+        "icon": "",
+        "payload": "10",
+        "payloadType": "num",
+        "topic": "/mididings/switch_subscene",
+        "topicType": "str",
+        "x": 2550,
+        "y": 1520,
+        "wires": [
+            [
+                "c5dc9aa1d7c5d5b9"
+            ]
+        ]
+    },
+    {
+        "id": "bd87abb6d91c8449",
+        "type": "ui_button",
+        "z": "1312daf792117c43",
+        "name": "SubScene11",
+        "group": "b1df786c93ec53f2",
+        "order": 23,
+        "width": 4,
+        "height": 1,
+        "passthru": false,
+        "label": "{{msg.name}}",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "{{color}}",
+        "className": "",
+        "icon": "",
+        "payload": "11",
+        "payloadType": "num",
+        "topic": "/mididings/switch_subscene",
+        "topicType": "str",
+        "x": 2550,
+        "y": 1560,
+        "wires": [
+            [
+                "c5dc9aa1d7c5d5b9"
+            ]
+        ]
+    },
+    {
+        "id": "db577ef5126fe0f3",
+        "type": "ui_button",
+        "z": "1312daf792117c43",
+        "name": "SubScene12",
+        "group": "b1df786c93ec53f2",
+        "order": 24,
+        "width": 4,
+        "height": 1,
+        "passthru": false,
+        "label": "{{msg.name}}",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "{{color}}",
+        "className": "",
+        "icon": "",
+        "payload": "12",
+        "payloadType": "num",
+        "topic": "/mididings/switch_subscene",
+        "topicType": "str",
+        "x": 2550,
+        "y": 1600,
+        "wires": [
+            [
+                "c5dc9aa1d7c5d5b9"
+            ]
+        ]
+    },
+    {
+        "id": "b6c6a234a8daa7d1",
+        "type": "ui_button",
+        "z": "1312daf792117c43",
+        "name": "SubScene13",
+        "group": "b1df786c93ec53f2",
+        "order": 27,
+        "width": 4,
+        "height": 1,
+        "passthru": false,
+        "label": "{{msg.name}}",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "{{color}}",
+        "className": "",
+        "icon": "",
+        "payload": "",
+        "payloadType": "num",
+        "topic": "/mididings/switch_subscene",
+        "topicType": "str",
+        "x": 2550,
+        "y": 1640,
+        "wires": [
+            [
+                "c5dc9aa1d7c5d5b9"
+            ]
+        ]
+    },
+    {
+        "id": "f40bcb47e4db3ff2",
+        "type": "ui_button",
+        "z": "1312daf792117c43",
+        "name": "SubScene14",
+        "group": "b1df786c93ec53f2",
+        "order": 28,
+        "width": 4,
+        "height": 1,
+        "passthru": false,
+        "label": "{{msg.name}}",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "{{color}}",
+        "className": "",
+        "icon": "",
+        "payload": "14",
+        "payloadType": "num",
+        "topic": "/mididings/switch_subscene",
+        "topicType": "str",
+        "x": 2550,
+        "y": 1680,
+        "wires": [
+            [
+                "c5dc9aa1d7c5d5b9"
+            ]
+        ]
+    },
+    {
+        "id": "a4f93019c6825c1e",
+        "type": "ui_button",
+        "z": "1312daf792117c43",
+        "name": "SubScene15",
+        "group": "b1df786c93ec53f2",
+        "order": 29,
+        "width": 4,
+        "height": 1,
+        "passthru": false,
+        "label": "{{msg.name}}",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "{{color}}",
+        "className": "",
+        "icon": "",
+        "payload": "15",
+        "payloadType": "num",
+        "topic": "/mididings/switch_subscene",
+        "topicType": "str",
+        "x": 2550,
+        "y": 1720,
+        "wires": [
+            [
+                "c5dc9aa1d7c5d5b9"
+            ]
+        ]
+    },
+    {
+        "id": "010fbf7689776445",
+        "type": "ui_button",
+        "z": "1312daf792117c43",
+        "name": "SubScene16",
+        "group": "b1df786c93ec53f2",
+        "order": 30,
+        "width": 4,
+        "height": 1,
+        "passthru": false,
+        "label": "{{msg.name}}",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "{{color}}",
+        "className": "",
+        "icon": "",
+        "payload": "16",
+        "payloadType": "num",
+        "topic": "/mididings/switch_subscene",
+        "topicType": "str",
+        "x": 2550,
+        "y": 1760,
+        "wires": [
+            [
+                "c5dc9aa1d7c5d5b9"
+            ]
+        ]
+    },
+    {
+        "id": "800496188cd7de44",
+        "type": "ui_button",
+        "z": "1312daf792117c43",
+        "name": "SubScene17",
+        "group": "b1df786c93ec53f2",
+        "order": 33,
+        "width": 4,
+        "height": 1,
+        "passthru": false,
+        "label": "{{msg.name}}",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "{{color}}",
+        "className": "",
+        "icon": "",
+        "payload": "17",
+        "payloadType": "num",
+        "topic": "/mididings/switch_subscene",
+        "topicType": "str",
+        "x": 2550,
+        "y": 1800,
+        "wires": [
+            [
+                "c5dc9aa1d7c5d5b9"
+            ]
+        ]
+    },
+    {
+        "id": "82b0f3de414feb6d",
+        "type": "ui_button",
+        "z": "1312daf792117c43",
+        "name": "SubScene18",
+        "group": "b1df786c93ec53f2",
+        "order": 34,
+        "width": 4,
+        "height": 1,
+        "passthru": false,
+        "label": "{{msg.name}}",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "{{color}}",
+        "className": "",
+        "icon": "",
+        "payload": "18",
+        "payloadType": "num",
+        "topic": "/mididings/switch_subscene",
+        "topicType": "str",
+        "x": 2550,
+        "y": 1840,
+        "wires": [
+            [
+                "c5dc9aa1d7c5d5b9"
+            ]
+        ]
+    },
+    {
+        "id": "50eba8223d9e9a47",
+        "type": "ui_button",
+        "z": "1312daf792117c43",
+        "name": "SubScene19",
+        "group": "b1df786c93ec53f2",
+        "order": 35,
+        "width": 4,
+        "height": 1,
+        "passthru": false,
+        "label": "{{msg.name}}",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "{{color}}",
+        "className": "",
+        "icon": "",
+        "payload": "19",
+        "payloadType": "num",
+        "topic": "/mididings/switch_subscene",
+        "topicType": "str",
+        "x": 2550,
+        "y": 1880,
+        "wires": [
+            [
+                "c5dc9aa1d7c5d5b9"
+            ]
+        ]
+    },
+    {
+        "id": "081263a8ec5b1b86",
+        "type": "ui_button",
+        "z": "1312daf792117c43",
+        "name": "SubScene20",
+        "group": "b1df786c93ec53f2",
+        "order": 36,
+        "width": 4,
+        "height": 1,
+        "passthru": false,
+        "label": "{{msg.name}}",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "{{color}}",
+        "className": "",
+        "icon": "",
+        "payload": "20",
+        "payloadType": "num",
+        "topic": "/mididings/switch_subscene",
+        "topicType": "str",
+        "x": 2550,
+        "y": 1920,
+        "wires": [
+            [
+                "c5dc9aa1d7c5d5b9"
+            ]
+        ]
+    },
+    {
+        "id": "4e0adf0eceec7f3d",
+        "type": "ui_button",
+        "z": "1312daf792117c43",
+        "name": "SubScene21",
+        "group": "b1df786c93ec53f2",
+        "order": 39,
+        "width": 4,
+        "height": 1,
+        "passthru": false,
+        "label": "{{msg.name}}",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "{{color}}",
+        "className": "",
+        "icon": "",
+        "payload": "21",
+        "payloadType": "num",
+        "topic": "/mididings/switch_subscene",
+        "topicType": "str",
+        "x": 2550,
+        "y": 1960,
+        "wires": [
+            [
+                "c5dc9aa1d7c5d5b9"
+            ]
+        ]
+    },
+    {
+        "id": "0d08a94a2c678c6c",
+        "type": "ui_button",
+        "z": "1312daf792117c43",
+        "name": "SubScene22",
+        "group": "b1df786c93ec53f2",
+        "order": 40,
+        "width": 4,
+        "height": 1,
+        "passthru": false,
+        "label": "{{msg.name}}",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "{{color}}",
+        "className": "",
+        "icon": "",
+        "payload": "22",
+        "payloadType": "num",
+        "topic": "/mididings/switch_subscene",
+        "topicType": "str",
+        "x": 2550,
+        "y": 2000,
+        "wires": [
+            [
+                "c5dc9aa1d7c5d5b9"
+            ]
+        ]
+    },
+    {
+        "id": "34900bce0fb13649",
+        "type": "ui_button",
+        "z": "1312daf792117c43",
+        "name": "SubScene23",
+        "group": "b1df786c93ec53f2",
+        "order": 41,
+        "width": 4,
+        "height": 1,
+        "passthru": false,
+        "label": "{{msg.name}}",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "{{color}}",
+        "className": "",
+        "icon": "",
+        "payload": "23",
+        "payloadType": "num",
+        "topic": "/mididings/switch_subscene",
+        "topicType": "str",
+        "x": 2550,
+        "y": 2040,
+        "wires": [
+            [
+                "c5dc9aa1d7c5d5b9"
+            ]
+        ]
+    },
+    {
+        "id": "3e15ec20c8a9cf3f",
+        "type": "ui_button",
+        "z": "1312daf792117c43",
+        "name": "SubScene24",
+        "group": "b1df786c93ec53f2",
+        "order": 42,
+        "width": 4,
+        "height": 1,
+        "passthru": false,
+        "label": "{{msg.name}}",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "{{color}}",
+        "className": "",
+        "icon": "",
+        "payload": "24",
+        "payloadType": "num",
+        "topic": "/mididings/switch_subscene",
+        "topicType": "str",
+        "x": 2550,
+        "y": 2080,
+        "wires": [
+            [
+                "c5dc9aa1d7c5d5b9"
+            ]
+        ]
+    },
+    {
+        "id": "69cea060c474a75c",
+        "type": "ui_button",
+        "z": "1312daf792117c43",
+        "name": "SubScene25",
+        "group": "b1df786c93ec53f2",
+        "order": 45,
+        "width": 4,
+        "height": 1,
+        "passthru": false,
+        "label": "{{msg.name}}",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "{{color}}",
+        "className": "",
+        "icon": "",
+        "payload": "25",
+        "payloadType": "num",
+        "topic": "/mididings/switch_subscene",
+        "topicType": "str",
+        "x": 2550,
+        "y": 2120,
+        "wires": [
+            [
+                "c5dc9aa1d7c5d5b9"
+            ]
+        ]
+    },
+    {
+        "id": "a094198acddda241",
+        "type": "ui_button",
+        "z": "1312daf792117c43",
+        "name": "SubScene26",
+        "group": "b1df786c93ec53f2",
+        "order": 46,
+        "width": 4,
+        "height": 1,
+        "passthru": false,
+        "label": "{{msg.name}}",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "{{color}}",
+        "className": "",
+        "icon": "",
+        "payload": "26",
+        "payloadType": "num",
+        "topic": "/mididings/switch_subscene",
+        "topicType": "str",
+        "x": 2550,
+        "y": 2160,
+        "wires": [
+            [
+                "c5dc9aa1d7c5d5b9"
+            ]
+        ]
+    },
+    {
+        "id": "f841b8919e5035e2",
+        "type": "ui_button",
+        "z": "1312daf792117c43",
+        "name": "SubScene27",
+        "group": "b1df786c93ec53f2",
+        "order": 47,
+        "width": 4,
+        "height": 1,
+        "passthru": false,
+        "label": "{{msg.name}}",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "{{color}}",
+        "className": "",
+        "icon": "",
+        "payload": "27",
+        "payloadType": "num",
+        "topic": "/mididings/switch_subscene",
+        "topicType": "str",
+        "x": 2550,
+        "y": 2200,
+        "wires": [
+            [
+                "c5dc9aa1d7c5d5b9"
+            ]
+        ]
+    },
+    {
+        "id": "690a75f7ac428d06",
+        "type": "ui_button",
+        "z": "1312daf792117c43",
+        "name": "SubScene28",
+        "group": "b1df786c93ec53f2",
+        "order": 48,
+        "width": 4,
+        "height": 1,
+        "passthru": false,
+        "label": "{{msg.name}}",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "{{color}}",
+        "className": "",
+        "icon": "",
+        "payload": "28",
+        "payloadType": "num",
+        "topic": "/mididings/switch_subscene",
+        "topicType": "str",
+        "x": 2550,
+        "y": 2240,
+        "wires": [
+            [
+                "c5dc9aa1d7c5d5b9"
+            ]
+        ]
+    },
+    {
+        "id": "82d9dd7eaf82933a",
+        "type": "ui_button",
+        "z": "1312daf792117c43",
+        "name": "SubScene29",
+        "group": "b1df786c93ec53f2",
+        "order": 51,
+        "width": 4,
+        "height": 1,
+        "passthru": false,
+        "label": "{{msg.name}}",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "{{color}}",
+        "className": "",
+        "icon": "",
+        "payload": "29",
+        "payloadType": "num",
+        "topic": "/mididings/switch_subscene",
+        "topicType": "str",
+        "x": 2550,
+        "y": 2280,
+        "wires": [
+            [
+                "c5dc9aa1d7c5d5b9"
+            ]
+        ]
+    },
+    {
+        "id": "2485dc131243dda9",
+        "type": "ui_button",
+        "z": "1312daf792117c43",
+        "name": "SubScene30",
+        "group": "b1df786c93ec53f2",
+        "order": 52,
+        "width": 4,
+        "height": 1,
+        "passthru": false,
+        "label": "{{msg.name}}",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "{{color}}",
+        "className": "",
+        "icon": "",
+        "payload": "30",
+        "payloadType": "num",
+        "topic": "/mididings/switch_subscene",
+        "topicType": "str",
+        "x": 2550,
+        "y": 2320,
+        "wires": [
+            [
+                "c5dc9aa1d7c5d5b9"
+            ]
+        ]
+    },
+    {
+        "id": "2e5d966baef7503d",
+        "type": "ui_button",
+        "z": "1312daf792117c43",
+        "name": "SubScene31",
+        "group": "b1df786c93ec53f2",
+        "order": 53,
+        "width": 4,
+        "height": 1,
+        "passthru": false,
+        "label": "{{msg.name}}",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "{{color}}",
+        "className": "",
+        "icon": "",
+        "payload": "31",
+        "payloadType": "num",
+        "topic": "/mididings/switch_subscene",
+        "topicType": "str",
+        "x": 2550,
+        "y": 2360,
+        "wires": [
+            [
+                "c5dc9aa1d7c5d5b9"
+            ]
+        ]
+    },
+    {
+        "id": "f969487c45528122",
+        "type": "ui_button",
+        "z": "1312daf792117c43",
+        "name": "SubScene32",
+        "group": "b1df786c93ec53f2",
+        "order": 54,
+        "width": 4,
+        "height": 1,
+        "passthru": false,
+        "label": "{{msg.name}}",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "{{color}}",
+        "className": "",
+        "icon": "",
+        "payload": "32",
+        "payloadType": "num",
+        "topic": "/mididings/switch_subscene",
+        "topicType": "str",
+        "x": 2550,
+        "y": 2400,
+        "wires": [
+            [
+                "c5dc9aa1d7c5d5b9"
+            ]
+        ]
+    },
+    {
+        "id": "c5dc9aa1d7c5d5b9",
+        "type": "link out",
+        "z": "1312daf792117c43",
+        "name": "Submit Subscene to OSC",
+        "mode": "link",
+        "links": [
+            "1f2dd22c6e3891b8"
+        ],
+        "x": 3055,
+        "y": 1720,
+        "wires": []
+    },
+    {
+        "id": "b2913fb149518993",
+        "type": "ui_template",
+        "z": "1312daf792117c43",
+        "group": "b1df786c93ec53f2",
+        "name": "Global Style",
+        "order": 60,
+        "width": 0,
+        "height": 0,
+        "format": "<style>\n.md-button {\n  border-radius: 10px 10px  10px  10px;\n  font-size: 20px;\n  text-transform: none !important;\n}\n/*\n.nr-dashboard-widget-current_scene\n{\n    font-size: 40px !important;\n}\n\n.nr-dashboard-theme .nr-dashboard-button .md-button\n{\n    background-color: black;\n}\n*/\n</style>",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": true,
+        "templateScope": "global",
+        "className": "",
+        "x": 370,
+        "y": 780,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "73f11e2d7e2928ae",
+        "type": "ui_text",
+        "z": "1312daf792117c43",
+        "group": "b1df786c93ec53f2",
+        "order": 55,
+        "width": 8,
+        "height": 1,
+        "name": "Credentials (placeholder)",
+        "label": "",
+        "format": "github.com/stefets/node-red-flow-mididings",
+        "layout": "row-center",
+        "className": "",
+        "x": 410,
+        "y": 860,
+        "wires": []
+    },
+    {
+        "id": "e91a308e54973520",
+        "type": "ui_text",
+        "z": "1312daf792117c43",
+        "group": "b1df786c93ec53f2",
+        "order": 6,
+        "width": 16,
+        "height": 1,
+        "name": "Set Title",
+        "label": "<font size=30>{{msg.cur_scene}}.{{msg.cur_subscene}}",
+        "format": "<font size=30>/{{msg.scene_name}}",
+        "layout": "row-left",
+        "className": "",
+        "x": 1160,
+        "y": 1060,
+        "wires": []
+    },
+    {
+        "id": "ae1b4e3d847c09fa",
+        "type": "function",
+        "z": "1312daf792117c43",
+        "name": "SetBaseStyle",
+        "func": "color = \"black\";\n\nvar colors = [];\n\nfor (let i = 0; i < 16; i++) {\n  colors[i] = color;\n}\n\n// Scenes X 16 \nflow.set(\"scene_colors\", colors)\n\n// Subscene X 34\ncolors = [];\n\n for (let i = 0; i < 34; i++) {\n  colors[i] = color;  \n }\n \nflow.set(\"subscene_colors\", colors);\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 960,
+        "y": 980,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "535050366e7e47d6",
+        "type": "inject",
+        "z": "1312daf792117c43",
+        "name": "",
+        "props": [{
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 720,
+        "y": 940,
+        "wires": [
+            [
+                "ae1b4e3d847c09fa"
+            ]
+        ]
+    },
+    {
+        "id": "1c4438da1f91a38c",
+        "type": "split",
+        "z": "1312daf792117c43",
+        "name": "SplitStyleX16",
+        "splt": "\\n",
+        "spltType": "str",
+        "arraySplt": 1,
+        "arraySpltType": "len",
+        "stream": false,
+        "addname": "",
+        "x": 1750,
+        "y": 620,
+        "wires": [
+            [
+                "19efe55a5f0ec2c6"
+            ]
+        ]
+    },
+    {
+        "id": "b48998b507089cbb",
+        "type": "function",
+        "z": "1312daf792117c43",
+        "name": "Style.Init",
+        "func": "\nmsg.payload=flow.get('scene_colors')\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1580,
+        "y": 620,
+        "wires": [
+            [
+                "1c4438da1f91a38c"
+            ]
+        ]
+    },
+    {
+        "id": "12382a6f3dacf290",
+        "type": "delay",
+        "z": "1312daf792117c43",
+        "name": "Wait for current scene",
+        "pauseType": "delay",
+        "timeout": "125",
+        "timeoutUnits": "milliseconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 1380,
+        "y": 1100,
+        "wires": [
+            [
+                "b48998b507089cbb",
+                "c90ad3589d1a079e"
+            ]
+        ]
+    },
+    {
+        "id": "19efe55a5f0ec2c6",
+        "type": "function",
+        "z": "1312daf792117c43",
+        "name": "SetSelectedSceneUI",
+        "func": "\nindex = msg.parts.index+1;\n\nscenes = flow.get('scenes')\ncurrent = flow.get('current_scene');\ncurrentSceneId=current[0];\n\nmsg.name = \"\";\nmsg.index=index;\nif (currentSceneId == index) {\n    msg.color='gray';\n}\nelse\n    msg.color=msg.payload;\n\nif (msg.parts.index < scenes.length)\n    // Scene name\n    msg.name = scenes[index-1][1];\nelse\n    msg.enabled = false;\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1980,
+        "y": 620,
+        "wires": [
+            [
+                "5ec242bce38e62e6"
+            ]
+        ]
+    },
+    {
+        "id": "de83f726a3bf1fcc",
         "type": "debug",
         "z": "1312daf792117c43",
         "name": "",
@@ -757,89 +2774,124 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 870,
-        "y": 320,
+        "x": 510,
+        "y": 820,
         "wires": []
     },
     {
-        "id": "f1a6ba3d654a58b0",
-        "type": "ui_button",
+        "id": "c90ad3589d1a079e",
+        "type": "function",
         "z": "1312daf792117c43",
-        "name": "",
-        "group": "b8ee07816fbc9b82",
-        "order": 1,
-        "width": 3,
-        "height": 1,
-        "passthru": true,
-        "label": "Query",
-        "tooltip": "",
-        "color": "black",
-        "bgcolor": "yellow",
-        "className": "",
-        "icon": "",
-        "payload": "",
-        "payloadType": "str",
-        "topic": "/mididings/query",
-        "topicType": "str",
-        "x": 350,
-        "y": 420,
+        "name": "SubStyle.Init",
+        "func": "\nmsg.payload=flow.get('subscene_colors')\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1590,
+        "y": 1700,
         "wires": [
             [
-                "961f7f104d693837"
+                "6dfac3dea7c6e179"
             ]
         ]
     },
     {
-        "id": "e71bb537452084be",
-        "type": "ui_template",
+        "id": "6dfac3dea7c6e179",
+        "type": "split",
         "z": "1312daf792117c43",
-        "group": "3ba7f30bd79e35d7",
-        "name": "",
-        "order": 0,
-        "width": 0,
-        "height": 0,
-        "format": "<div ng-bind-html=\"flow.scenes\"></div>",
-        "storeOutMessages": true,
-        "fwdInMessages": true,
-        "resendOnRefresh": true,
-        "templateScope": "local",
-        "className": "",
-        "x": 640,
-        "y": 200,
+        "name": "SplitStyleX32",
+        "splt": "\\n",
+        "spltType": "str",
+        "arraySplt": 1,
+        "arraySpltType": "len",
+        "stream": false,
+        "addname": "",
+        "x": 1770,
+        "y": 1700,
         "wires": [
-            []
+            [
+                "ee9dab3b8f186c58"
+            ]
         ]
+    },
+    {
+        "id": "ee9dab3b8f186c58",
+        "type": "function",
+        "z": "1312daf792117c43",
+        "name": "SetSelectedSubSceneUI",
+        "func": "// 1 to 32\nmsg.index = msg.parts.index;\nmsg.color = msg.payload;\ncurrent = flow.get('current_scene');\n\nsceneID=current[0];     //  \nsubScendId=current[1];  //  \n\nscenes = flow.get('scenes');\n\nscene=scenes[sceneID-1];\nmsg.name=scene[msg.index]\n\nif (subScendId === msg.index-1) {\n    msg.color='gray';\n}\nelse\n    msg.color=msg.payload;\n    \nmsg.enabled = true;\nif (msg.index < scene.length)\n    // SubScene name\n    msg.name = scene[msg.index];\nelse\n    msg.enabled = false;\n\nreturn msg;\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1990,
+        "y": 1700,
+        "wires": [
+            [
+                "bb9a2a7bfdc29653",
+                "df2ccd401dde1f0d"
+            ]
+        ]
+    },
+    {
+        "id": "df2ccd401dde1f0d",
+        "type": "debug",
+        "z": "1312daf792117c43",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 2250,
+        "y": 1340,
+        "wires": []
+    },
+    {
+        "id": "1f2dd22c6e3891b8",
+        "type": "link in",
+        "z": "1312daf792117c43",
+        "name": "Send OSC message",
+        "links": [
+            "c5dc9aa1d7c5d5b9",
+            "f260310473736f34",
+            "f2910af4bf638bae"
+        ],
+        "x": 3255,
+        "y": 1060,
+        "wires": [
+            [
+                "6ea870b4d54824c1"
+            ]
+        ]
+    },
+    {
+        "id": "f2910af4bf638bae",
+        "type": "link out",
+        "z": "1312daf792117c43",
+        "name": "MididingsCommands",
+        "mode": "link",
+        "links": [
+            "1f2dd22c6e3891b8"
+        ],
+        "x": 3045,
+        "y": 1060,
+        "wires": []
     },
     {
         "id": "b1df786c93ec53f2",
         "type": "ui_group",
-        "name": "Navigation",
+        "name": "The Node Red Flow for mididindgs",
         "tab": "231f06ce466e9ede",
         "order": 1,
         "disp": true,
-        "width": 12,
-        "collapse": false,
-        "className": ""
-    },
-    {
-        "id": "b8ee07816fbc9b82",
-        "type": "ui_group",
-        "name": "Action",
-        "tab": "231f06ce466e9ede",
-        "order": 2,
-        "disp": true,
-        "width": 9,
-        "collapse": false,
-        "className": ""
-    },
-    {
-        "id": "3ba7f30bd79e35d7",
-        "type": "ui_group",
-        "name": "Scenes",
-        "tab": "231f06ce466e9ede",
-        "order": 3,
-        "disp": true,
-        "width": "6",
+        "width": "24",
         "collapse": false,
         "className": ""
     },
